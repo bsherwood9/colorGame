@@ -55,9 +55,9 @@ function setupSquares(){
     //add click listeners to squares
     squares[i].addEventListener("click", function(){
       //grab color of clicked square
-      var clickedColor = this.style.background;
+      var clickedColor = this.style.background.match(/rgb\(\d+,\s\d+,\s\d+\)/);
       //compare color to pickedColor did they pick right color
-      if(clickedColor === pickedColor){
+      if(clickedColor == pickedColor){
         messageDisplay.textContent = "Correct!";
         //make reset button now say "play again"
         resetButton.textContent = "Play Again?";
